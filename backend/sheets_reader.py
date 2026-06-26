@@ -43,8 +43,8 @@ TIMESTAMP_FORMATS: list[str] = [
 
 
 def _build_service():
-    creds = service_account.Credentials.from_service_account_file(
-        settings.GOOGLE_SHEETS_CREDENTIALS_JSON, scopes=SCOPES
+    creds = service_account.Credentials.from_service_account_info(
+        settings.google_credentials_dict(), scopes=SCOPES
     )
     return build("sheets", "v4", credentials=creds)
 
