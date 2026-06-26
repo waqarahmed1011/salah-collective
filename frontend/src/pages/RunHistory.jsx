@@ -29,7 +29,7 @@ export default function RunHistory() {
   if (error) return <div className="p-8"><div className="bg-red-50 border border-red-200 rounded-xl p-5 text-red-700 text-sm">{error}</div></div>
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-stone-900">Run History</h1>
         <p className="text-stone-500 text-sm mt-1">{runs.length} matching run{runs.length !== 1 ? 's' : ''} total</p>
@@ -39,6 +39,7 @@ export default function RunHistory() {
         {runs.length === 0 ? (
           <div className="py-12 text-center text-stone-400 text-sm">No runs yet.</div>
         ) : (
+          <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-stone-100 bg-stone-50">
@@ -71,6 +72,7 @@ export default function RunHistory() {
               ))}
             </tbody>
           </table>
+          </div>
         )}
       </div>
     </div>

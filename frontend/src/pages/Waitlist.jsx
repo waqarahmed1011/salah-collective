@@ -69,7 +69,7 @@ export default function Waitlist() {
   if (error) return <div className="p-8"><div className="bg-red-50 border border-red-200 rounded-xl p-5 text-red-700 text-sm">{error}</div></div>
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-stone-900">Waitlist</h1>
         <p className="text-stone-500 text-sm mt-1">

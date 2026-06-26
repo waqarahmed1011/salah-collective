@@ -64,7 +64,7 @@ export default function Dashboard() {
   if (error) return <ErrorState message={error} />
 
   return (
-    <div className="p-8 space-y-6 max-w-5xl">
+    <div className="p-4 sm:p-8 space-y-6 max-w-5xl">
       <div>
         <h1 className="text-2xl font-bold text-stone-900">Dashboard</h1>
         <p className="text-stone-500 text-sm mt-1">Salah Collective carpool overview</p>
@@ -97,7 +97,7 @@ export default function Dashboard() {
 
       <div className="bg-white rounded-xl border border-stone-200 shadow-sm p-5">
         <h2 className="text-xs font-semibold text-stone-400 uppercase tracking-wide mb-4">Trigger Matching</h2>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
           <RunButton
             label="Run Matching"
             description="Match new unmatched members into groups"
@@ -132,7 +132,7 @@ function RunButton({ label, description, isRunning, disabled, onClick }) {
     <button
       onClick={onClick}
       disabled={disabled}
-      className="flex items-start gap-3 px-5 py-4 bg-[#8C0000] text-white rounded-xl hover:bg-[#6B0000] disabled:opacity-60 disabled:cursor-not-allowed transition-colors text-left min-w-52"
+      className="flex items-start gap-3 px-5 py-4 bg-[#8C0000] text-white rounded-xl hover:bg-[#6B0000] disabled:opacity-60 disabled:cursor-not-allowed transition-colors text-left w-full sm:w-auto sm:min-w-52"
     >
       <span className="mt-0.5 shrink-0">
         {isRunning ? (

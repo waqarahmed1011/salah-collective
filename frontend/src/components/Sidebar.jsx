@@ -60,7 +60,7 @@ const NAV_ITEMS = [
   },
 ]
 
-export default function Sidebar() {
+export default function Sidebar({ open, onClose }) {
   const navigate = useNavigate()
 
   function handleLogout() {
@@ -69,8 +69,27 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="w-56 shrink-0 bg-[#8C0000] flex flex-col h-screen sticky top-0">
-      <div className="px-4 py-4 border-b border-[#6B0000]">
+    <aside
+      className={`
+        fixed top-0 left-0 h-full z-50
+        md:sticky md:top-0 md:h-screen
+        w-64 md:w-56 shrink-0
+        bg-[#8C0000] flex flex-col
+        transition-transform duration-300 ease-in-out
+        ${open ? 'translate-x-0' : '-translate-x-full'}
+        md:translate-x-0
+      `}
+    >
+      <div className="px-4 py-4 border-b border-[#6B0000] relative">
+        <button
+          onClick={onClose}
+          className="md:hidden absolute top-3 right-3 p-1 text-white/60 hover:text-white transition-colors"
+          aria-label="Close menu"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
         <div className="bg-white rounded-xl p-3 flex items-center justify-center">
           <img src={dsLogo} alt="Masjid DarusSalam" className="h-12 w-auto" />
         </div>
@@ -86,6 +105,7 @@ export default function Sidebar() {
             key={to}
             to={to}
             end={end}
+            onClick={onClose}
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 isActive

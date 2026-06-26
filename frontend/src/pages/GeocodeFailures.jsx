@@ -42,7 +42,7 @@ export default function GeocodeFailures() {
   if (error) return <div className="p-8"><div className="bg-red-50 border border-red-200 rounded-xl p-5 text-red-700 text-sm">{error}</div></div>
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-stone-900">Geocode Failures</h1>
         <p className="text-stone-500 text-sm mt-1">
@@ -61,6 +61,7 @@ export default function GeocodeFailures() {
         </div>
       ) : (
         <div className="bg-white rounded-xl border border-stone-200 shadow-sm overflow-hidden">
+          <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-stone-100 bg-stone-50">
@@ -103,6 +104,7 @@ export default function GeocodeFailures() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       )}
     </div>
