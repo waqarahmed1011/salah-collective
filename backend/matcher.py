@@ -340,7 +340,7 @@ def _run(db: Session, run_type: str, triggered_by: str) -> dict:
 
 def run_matching(db: Session, triggered_by: str = "scheduler") -> dict:
     """Run the proximity + prayer-preference matching algorithm."""
-    return _run(db, run_type="scheduled", triggered_by=triggered_by)
+    return _run(db, run_type="auto", triggered_by=triggered_by)
 
 
 def run_batch(db: Session) -> dict:

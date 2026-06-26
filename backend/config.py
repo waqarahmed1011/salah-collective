@@ -13,6 +13,7 @@ class Settings:
     ADMIN_SECRET_KEY: str = os.getenv("ADMIN_SECRET_KEY", "")
     SHEET_TAB_NAME: str = os.getenv("SHEET_TAB_NAME", "Sheet1")
     FRONTEND_URL: str = os.getenv("FRONTEND_URL", "")
+    GEOCODIO_API_KEY: str = os.getenv("GEOCODIO_API_KEY", "")
 
 
 settings = Settings()
